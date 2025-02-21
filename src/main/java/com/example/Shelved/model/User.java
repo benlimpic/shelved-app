@@ -10,27 +10,30 @@ import lombok.*;
 @Table(name = "users")
 @NoArgsConstructor
 public class User {
-  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long user_id;
-  private String user_name;
-  private String user_email;
-  private String user_password;
-  private String user_image;
-  private String user_bio;
-  private String user_location;
-  private String user_birthday;
+  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long userId;
+  private String username;
+  private String userEmail;
+  private String userPassword;
+  private String userImage;
+  private String userBio;
+  private String userLocation;
+  private String userBirthday;
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Collection> collections = new ArrayList<>();
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<User> user_following = new ArrayList<>();
+  private List<User> userFollowing = new ArrayList<>();
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<User> user_followers = new ArrayList<>();
+  private List<User> userFollowers = new ArrayList<>();
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Comment> user_comments = new ArrayList<>();
+  private List<Comment> userComments = new ArrayList<>();
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Collection> user_liked_collections = new ArrayList<>();
+  private List<Collection> userLikedCollections = new ArrayList<>();
+
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private List<Collection_Item> userLikedItems = new ArrayList<>();
 }

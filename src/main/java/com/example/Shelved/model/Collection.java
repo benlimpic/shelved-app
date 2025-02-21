@@ -10,22 +10,22 @@ import lombok.*;
 @Table(name = "collections")
 @NoArgsConstructor
 public class Collection {
-  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collection_id;
-  private String user_id;
+  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collectionId;
+  private String userId;
 
-  private String collection_name;
-  private String collection_description;
-  private String collection_image;
-  private Boolean collection_favorite;
+  private String collectionName;
+  private String collectionDescription;
+  private String collectionImage;
+  private Boolean collectionFavorite;
 
   @OneToMany(mappedBy = "collection", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Collection_Item> collection_items = new ArrayList<>();
+  private List<Collection_Item> collectionItems = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
-  private List<User> collection_liked_by = new ArrayList<>();
+  private List<User> collectionLikedBy = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
-  private List<Comment> collection_comments = new ArrayList<>();
+  private List<Comment> collectionComments = new ArrayList<>();
 
 
 }

@@ -12,66 +12,66 @@ import lombok.*;
 @Table(name = "collection_items")
 @NoArgsConstructor
 public class Collection_Item {
-  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collection_item_id;
-  private Long collection_id;
-  private Long item_id;
-  private ItemType item_type;
-  private ItemRating item_rating_by_user;
-  private String item_commentary_by_user;
+  private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collectionItemId;
+  private Long collectionId;
+  private Long itemId;
+  private ItemType itemType;
+  private String itemCommentaryByUser;
+  private ItemRating itemRatingByUser;
+  private Boolean itemFavorite;
 
-/* ITEM DATA TO BE PULLED FROM API */
 
 /*MUSIC*/
-  private String music_artist;
-  private String music_album;
-  private String music_genre;
-  private String music_release_date;
-  private String music_label;
-  private String music_length;
-  private String music_description;
-  private String music_image;
+  private String musicArtist;
+  private String musicAlbum;
+  private String musicGenre;
+  private String musicRelease_date;
+  private String musicLabel;
+  private String musicLength;
+  private String musicDescription;
+  private String musicImage;
 
-/*MOVIE*/
-  private String movie_director;
-  private String movie_producer;
-  private String movie_screenwriter;
-  private String movie_studio;
-  private String movie_release_date;
-  private String movie_length;
-  private String movie_description;
-  private String movie_image;
+/*CINEMA*/
+  private String cinemaDirector;
+  private String cinemaProducer;
+  private String cinemaScreenwriter;
+  private String cinemaStudio;
+  private String cinemaRelease_date;
+  private String cinemaLength;
+  private String cinemaDescription;
+  private String cinemaImage;
 
 /*BOOK*/
-  private String book_author;
-  private String book_publisher;
-  private String book_genre;
-  private String book_release_date;
-  private String book_length;
-  private String book_description;
-  private String book_image;
+  private String bookAuthor;
+  private String bookPublisher;
+  private String bookGenre;
+  private String bookRelease_date;
+  private String bookLength;
+  private String bookDescription;
+  private String bookImage;
 
 /*VIDEOGAME*/
-  private String videogame_developer;
-  private String videogame_publisher;
-  private String videogame_genre;
-  private String videogame_release_date;
-  private String videogame_platform;
-  private String videogame_description;
-  private String videogame_image;
+  private String videogameDeveloper;
+  private String videogamePublisher;
+  private String videogameGenre;
+  private String videogameReleaseDate;
+  private String videogamePlatform;
+  private String videogameDescription;
+  private String videogameImage;
 
 /*ART*/
-  private String art_artist;
-  private String art_title;
-  private String art_genre;
-  private String art_release_date;
-  private String art_description;
-  private String art_image;
+  private String artArtist;
+  private String artTitle;
+  private String artGenre;
+  private String artRelease_date;
+  private String artDescription;
+  private String artImage;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  private List<User> collection_item_liked_by = new ArrayList<>();
+  private List<User> collectionItemLikedBy = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
-  private List<Comment> collection_item_comments = new ArrayList<>();
+  private List<Comment> collectionItemComments = new ArrayList<>();
 
 
 }
