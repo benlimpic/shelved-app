@@ -16,11 +16,16 @@ public class Collection {
   private String collection_name;
   private String collection_description;
   private String collection_image;
-  
-  private Enum display_style;
-
+  private Boolean collection_favorite;
 
   @OneToMany(mappedBy = "collection", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Collection_Item> collection_items = new ArrayList<>();
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  private List<User> collection_liked_by = new ArrayList<>();
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  private List<Comment> collection_comments = new ArrayList<>();
+
 
 }
