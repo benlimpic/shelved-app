@@ -4,10 +4,10 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.Shelved.model.Collection_Item;
+import com.example.Shelved.model.CollectionItem;
 
 
 
-public interface CollectionItemRepository extends CrudRepository<Collection_Item, Long>{
+public interface CollectionItemRepository extends CrudRepository<CollectionItem, Long>{
   
 }

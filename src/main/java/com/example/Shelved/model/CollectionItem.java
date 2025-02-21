@@ -11,7 +11,7 @@ import lombok.*;
 @Entity
 @Table(name = "collection_items")
 @NoArgsConstructor
-public class Collection_Item {
+public class CollectionItem {
   private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collectionItemId;
   private Long collectionId;
   private Long itemId;

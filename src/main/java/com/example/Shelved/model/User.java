@@ -35,5 +35,5 @@ public class User {
   private List<Collection> userLikedCollections = new ArrayList<>();
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Collection_Item> userLikedItems = new ArrayList<>();
+  private List<CollectionItem> userLikedItems = new ArrayList<>();
 }

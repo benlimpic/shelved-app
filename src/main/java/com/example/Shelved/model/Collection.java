@@ -19,7 +19,7 @@ public class Collection {
   private Boolean collectionFavorite;
 
   @OneToMany(mappedBy = "collection", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-  private List<Collection_Item> collectionItems = new ArrayList<>();
+  private List<CollectionItem> collectionItems = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
   private List<User> collectionLikedBy = new ArrayList<>();
