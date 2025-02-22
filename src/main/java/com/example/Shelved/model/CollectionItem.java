@@ -14,7 +14,7 @@ import lombok.*;
 public class CollectionItem {
   private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long collectionItemId;
   private Long collectionId;
-  private Long itemId;
+  private Long userId;
   private ItemType itemType;
   private String itemCommentaryByUser;
   private ItemRating itemRatingByUser;

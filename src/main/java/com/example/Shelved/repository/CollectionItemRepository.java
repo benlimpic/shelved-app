@@ -9,5 +9,5 @@ import com.example.Shelved.model.CollectionItem;
 
 
 public interface CollectionItemRepository extends CrudRepository<CollectionItem, Long>{
-  
+  Optional<CollectionItem> findByCollectionItemId(Long collectionItemId);
 }

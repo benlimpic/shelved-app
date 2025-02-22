@@ -62,7 +62,7 @@ public class UserController {
 
   /*----------------------------------------------------------------------------------------- */
 
-  
+
   private void copyUserInfoFrom(User updatedUser, User existingUser) {
 
     if (ObjectUtils.isEmpty(updatedUser.getUsername())) {
@@ -91,6 +91,30 @@ public class UserController {
 
     if (!ObjectUtils.isEmpty(updatedUser.getUserBirthday())) {
       existingUser.setUserBirthday(updatedUser.getUserBirthday());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getCollections())) {
+      existingUser.setCollections(updatedUser.getCollections());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getUserFollowing())) {
+      existingUser.setUserFollowing(updatedUser.getUserFollowing());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getUserFollowers())) {
+      existingUser.setUserFollowers(updatedUser.getUserFollowers());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getUserComments())) {
+      existingUser.setUserComments(updatedUser.getUserComments());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getUserLikedCollections())) {
+      existingUser.setUserLikedCollections(updatedUser.getUserLikedCollections());
+    }
+
+    if (!ObjectUtils.isEmpty(updatedUser.getUserLikedItems())) {
+      existingUser.setUserLikedItems(updatedUser.getUserLikedItems());
     }
   }
 
